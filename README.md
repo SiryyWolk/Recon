@@ -1,6 +1,4 @@
 # Recon
-I had lost my old Recon file I expected college to keep all my data but the following year it has been removed 
-I'll try to recreate the code for port scanning.
 
 Recon is a Python TCP port scanner. It resolves a hostname to an IPv4 address,
 scans a configurable port range, checks which ports are open, and attempts to
@@ -16,7 +14,7 @@ certificate information such as:
 - Valid-from and expiration dates
 - Subject alternative names
 
-Every scan writes in `scan_result.json` with the dated results.
+Every scan appends a new dated section to `scan_result.json` instead of overwriting the previous one. The timestamp is recorded in Irish time (UTC+1).
 
 ## Requirements
 
@@ -69,47 +67,44 @@ version and certificate status, for example:
 [+] Port 443 is open - HTTPS (TLSv1.3), certificate found
 ```
 
-The full report is written to `scan_result.json`:
+The full report is appended to `scan_result.json` in dated blocks, for example:
 
-```json
+```text
+Scanned at: 2026-09-15 18:32:40
 {
-	"target": "104.20.23.154",
-	"hostname": "Unknown",
-	"scanned_at": "2026-09-15T17:13:10",
-	"port_range": {
-		"start": 443,
-		"end": 443
-	},
-	"open_ports": [
-		{
-			"port": 443,
-			"state": "open",
-			"service": "HTTPS (TLSv1.3), certificate found",
-			"https": true,
-			"tls_version": "TLSv1.3",
-			"tls_cipher": "TLS_AES_256_GCM_SHA384",
-			"certificate": {}
-		}
-	]
+  "target": "104.20.23.154",
+  "hostname": "Unknown",
+  "scanned_at": "2026-09-15T17:32:40",
+  "port_range": {
+    "start": 443,
+    "end": 443
+  },
+  "open_ports": [
+    {
+      "port": 443,
+      "state": "open",
+      "service": "HTTPS (TLSv1.3), certificate found",
+      "banner": null,
+      "https": true,
+      "tls_version": "TLSv1.3",
+      "tls_cipher": "TLS_AES_256_GCM_SHA384",
+      "certificate": {}
+    }
+  ]
 }
 ```
 
-The actual `certificate` object contains the certificate fields returned by the
-TLS server. It is `null` when no certificate is available.
+Each new scan adds another timestamped block to the end of the file. The recorded time is in Irish time (UTC+1). The actual `certificate` object contains the certificate fields returned by the TLS server. It is `null` when no certificate is available.
 
 ## Viewing the JSON report
 
-Print the report:
+Print the log file:
 
 ```bash
 cat scan_result.json
 ```
 
-Pretty-print and validate it with Python:
-
-```bash
-python -m json.tool scan_result.json
-```
+If you want to inspect a specific scan block, view the newest section at the end of the file. The file is an append-only log of timestamped scans, not a single overwritten JSON document.
 
 ## Using `run.sh`
 
