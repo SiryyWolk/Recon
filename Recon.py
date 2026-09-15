@@ -1,9 +1,10 @@
+import os
 import socket
 import argparse
 import json
 import ssl
 import tempfile
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from concurrent.futures import ThreadPoolExecutor
 
 #banner grabbing function
@@ -95,6 +96,23 @@ def scan_port(ip, port, verbose=False, server_hostname=None):
             print(f"[-] Error: {e} - Port {port}")
             return None            
         
+def append_scan_report(report, file_path="scan_result.json"):
+    """Append a scan result as a dated text block with JSON content below it."""
+    ireland_time = datetime.now(timezone.utc) + timedelta(hours=1)
+    timestamp = ireland_time.strftime("%Y-%m-%d %H:%M:%S")
+    pretty_report = json.dumps(report, ensure_ascii=False, indent=2)
+
+    with open(file_path, "a", encoding="utf-8") as file:
+        if file.tell() > 0:
+            file.write("\n\n")
+        file.write(f"Scanned at: {timestamp}\n")
+        file.write(pretty_report)
+        file.write("\n")
+
+    print(f"\n[+] JSON scan report appended to {file_path}")
+    return report
+
+
 #main scan running routine 
 def run_scan(target_ip, start_port, end_port, max_threads, verbose, server_hostname=None):
     try:
@@ -102,9 +120,10 @@ def run_scan(target_ip, start_port, end_port, max_threads, verbose, server_hostn
     except:
         hostname = "Unknown"
     
+    ireland_time = datetime.now(timezone.utc) + timedelta(hours=1)
     print(f"\n[***] Scanning target: {target_ip} ({hostname})")
     print(f"[***] Port range: {start_port}-{end_port}")
-    print(f"[***] Starting scan at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    print(f"[***] Starting scan at {ireland_time.strftime('%Y-%m-%d %H:%M:%S')} (UTC+1)\n")
     
     
     with ThreadPoolExecutor(max_workers=max_threads) as executor:
@@ -125,10 +144,7 @@ def run_scan(target_ip, start_port, end_port, max_threads, verbose, server_hostn
         "open_ports": sorted(open_ports, key=lambda result: result["port"]),
     }
 
-    with open("scan_result.json", "w", encoding="utf-8") as file:
-        json.dump(report, file, indent=2)
-
-    print("\n[+] JSON scan report written to scan_result.json")
+    append_scan_report(report, "scan_result.json")
     return report
                     
 
