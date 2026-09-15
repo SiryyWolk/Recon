@@ -1,4 +1,6 @@
 # Recon
+I had lost my old Recon file I expected college to keep all my data but the following year it has been removed 
+I'll try to recreate the code for port scanning.
 
 Recon is a Python TCP port scanner. It resolves a hostname to an IPv4 address,
 scans a configurable port range, checks which ports are open, and attempts to
@@ -14,14 +16,13 @@ certificate information such as:
 - Valid-from and expiration dates
 - Subject alternative names
 
-Every scan rewrites `scan_result.json` with the latest results.
+Every scan writes in `scan_result.json` with the dated results.
 
 ## Requirements
 
 - Python 3.8 or newer
 - Network access to the target
 
-No third-party Python packages are required.
 
 ## Usage
 
