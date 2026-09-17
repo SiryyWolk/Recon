@@ -72,3 +72,404 @@ Scanned at: 2026-09-15 18:44:33
     }
   ]
 }
+
+
+Scanned at: 2026-09-17 09:06:58
+{
+  "target": "172.66.147.243",
+  "hostname": "Unknown",
+  "scanned_at": "2026-09-17T08:06:58",
+  "port_range": {
+    "start": 443,
+    "end": 443
+  },
+  "open_ports": [
+    {
+      "port": 443,
+      "state": "open",
+      "service": "HTTPS (TLSv1.3), certificate found",
+      "banner": null,
+      "https": true,
+      "tls_version": "TLSv1.3",
+      "tls_cipher": "TLS_AES_256_GCM_SHA384",
+      "certificate": {
+        "subject": [
+          [
+            [
+              "commonName",
+              "example.com"
+            ]
+          ]
+        ],
+        "issuer": [
+          [
+            [
+              "countryName",
+              "US"
+            ]
+          ],
+          [
+            [
+              "organizationName",
+              "SSL Corporation"
+            ]
+          ],
+          [
+            [
+              "commonName",
+              "Cloudflare TLS Issuing ECC CA 3"
+            ]
+          ]
+        ],
+        "version": 3,
+        "serialNumber": "0624D0AB311558780B7D5213B9631831",
+        "notBefore": "Jul 29 22:10:08 2026 GMT",
+        "notAfter": "Oct 27 22:17:21 2026 GMT",
+        "subjectAltName": [
+          [
+            "DNS",
+            "example.com"
+          ],
+          [
+            "DNS",
+            "*.example.com"
+          ]
+        ],
+        "OCSP": [
+          "http://o.cf-i.ssl.com"
+        ],
+        "caIssuers": [
+          "http://i.cf-i.ssl.com/Cloudflare-TLS-I-E3.cer"
+        ],
+        "crlDistributionPoints": [
+          "http://c.cf-i.ssl.com/ae801ed1c55bb579d79208b0d772acfb8cc3a208.crl"
+        ]
+      }
+    }
+  ]
+}
+
+
+Scanned at: 2026-09-17 09:24:35
+{
+  "target": "142.251.30.91",
+  "hostname": "sv-in-f91.1e100.net",
+  "scanned_at": "2026-09-17T08:24:35",
+  "port_range": {
+    "start": 443,
+    "end": 443
+  },
+  "open_ports": [
+    {
+      "port": 443,
+      "state": "open",
+      "service": "HTTPS (TLSv1.3), certificate found",
+      "banner": null,
+      "https": true,
+      "tls_version": "TLSv1.3",
+      "tls_cipher": "TLS_AES_256_GCM_SHA384",
+      "certificate": {
+        "subject": [
+          [
+            [
+              "commonName",
+              "*.google.com"
+            ]
+          ]
+        ],
+        "issuer": [
+          [
+            [
+              "countryName",
+              "US"
+            ]
+          ],
+          [
+            [
+              "organizationName",
+              "Google Trust Services"
+            ]
+          ],
+          [
+            [
+              "commonName",
+              "WR2"
+            ]
+          ]
+        ],
+        "version": 3,
+        "serialNumber": "E0E3A6606BED047712C1A48E777E2884",
+        "notBefore": "Aug 10 08:37:35 2026 GMT",
+        "notAfter": "Nov  2 08:37:34 2026 GMT",
+        "subjectAltName": [
+          [
+            "DNS",
+            "*.google.com"
+          ],
+          [
+            "DNS",
+            "*.appengine.google.com"
+          ],
+          [
+            "DNS",
+            "*.bdn.dev"
+          ],
+          [
+            "DNS",
+            "*.origin-test.bdn.dev"
+          ],
+          [
+            "DNS",
+            "*.cloud.google.com"
+          ],
+          [
+            "DNS",
+            "*.crowdsource.google.com"
+          ],
+          [
+            "DNS",
+            "*.datacompute.google.com"
+          ],
+          [
+            "DNS",
+            "*.google.ca"
+          ],
+          [
+            "DNS",
+            "*.google.cl"
+          ],
+          [
+            "DNS",
+            "*.google.co.in"
+          ],
+          [
+            "DNS",
+            "*.google.co.jp"
+          ],
+          [
+            "DNS",
+            "*.google.co.uk"
+          ],
+          [
+            "DNS",
+            "*.google.com.ar"
+          ],
+          [
+            "DNS",
+            "*.google.com.au"
+          ],
+          [
+            "DNS",
+            "*.google.com.br"
+          ],
+          [
+            "DNS",
+            "*.google.com.co"
+          ],
+          [
+            "DNS",
+            "*.google.com.mx"
+          ],
+          [
+            "DNS",
+            "*.google.com.tr"
+          ],
+          [
+            "DNS",
+            "*.google.com.vn"
+          ],
+          [
+            "DNS",
+            "*.google.de"
+          ],
+          [
+            "DNS",
+            "*.google.es"
+          ],
+          [
+            "DNS",
+            "*.google.fr"
+          ],
+          [
+            "DNS",
+            "*.google.hu"
+          ],
+          [
+            "DNS",
+            "*.google.it"
+          ],
+          [
+            "DNS",
+            "*.google.nl"
+          ],
+          [
+            "DNS",
+            "*.google.pl"
+          ],
+          [
+            "DNS",
+            "*.google.pt"
+          ],
+          [
+            "DNS",
+            "*.gemini.cloud.google.com"
+          ],
+          [
+            "DNS",
+            "*.gstatic.com"
+          ],
+          [
+            "DNS",
+            "*.metric.gstatic.com"
+          ],
+          [
+            "DNS",
+            "*.gvt1.com"
+          ],
+          [
+            "DNS",
+            "*.gcpcdn.gvt1.com"
+          ],
+          [
+            "DNS",
+            "*.gvt2.com"
+          ],
+          [
+            "DNS",
+            "*.gcp.gvt2.com"
+          ],
+          [
+            "DNS",
+            "*.url.google.com"
+          ],
+          [
+            "DNS",
+            "*.youtube-nocookie.com"
+          ],
+          [
+            "DNS",
+            "*.ytimg.com"
+          ],
+          [
+            "DNS",
+            "ai.android"
+          ],
+          [
+            "DNS",
+            "android.com"
+          ],
+          [
+            "DNS",
+            "*.android.com"
+          ],
+          [
+            "DNS",
+            "*.flash.android.com"
+          ],
+          [
+            "DNS",
+            "g.co"
+          ],
+          [
+            "DNS",
+            "*.g.co"
+          ],
+          [
+            "DNS",
+            "goo.gl"
+          ],
+          [
+            "DNS",
+            "www.goo.gl"
+          ],
+          [
+            "DNS",
+            "google-analytics.com"
+          ],
+          [
+            "DNS",
+            "*.google-analytics.com"
+          ],
+          [
+            "DNS",
+            "google.com"
+          ],
+          [
+            "DNS",
+            "googlecommerce.com"
+          ],
+          [
+            "DNS",
+            "*.googlecommerce.com"
+          ],
+          [
+            "DNS",
+            "urchin.com"
+          ],
+          [
+            "DNS",
+            "*.urchin.com"
+          ],
+          [
+            "DNS",
+            "youtu.be"
+          ],
+          [
+            "DNS",
+            "youtube.com"
+          ],
+          [
+            "DNS",
+            "*.youtube.com"
+          ],
+          [
+            "DNS",
+            "music.youtube.com"
+          ],
+          [
+            "DNS",
+            "*.music.youtube.com"
+          ],
+          [
+            "DNS",
+            "youtubeeducation.com"
+          ],
+          [
+            "DNS",
+            "*.youtubeeducation.com"
+          ],
+          [
+            "DNS",
+            "youtubekids.com"
+          ],
+          [
+            "DNS",
+            "*.youtubekids.com"
+          ],
+          [
+            "DNS",
+            "yt.be"
+          ],
+          [
+            "DNS",
+            "*.yt.be"
+          ],
+          [
+            "DNS",
+            "android.clients.google.com"
+          ],
+          [
+            "DNS",
+            "*.aistudio.google.com"
+          ]
+        ],
+        "caIssuers": [
+          "http://i.pki.goog/wr2.crt"
+        ],
+        "crlDistributionPoints": [
+          "http://c.pki.goog/wr2/oBFYYahzgVI.crl"
+        ]
+      }
+    }
+  ]
+}
